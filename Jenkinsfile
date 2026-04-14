@@ -65,4 +65,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "Pipeline Successful!"
+        }
+        failure {
+            echo "Pipeline Failed!"
+        }
+    }
 }
