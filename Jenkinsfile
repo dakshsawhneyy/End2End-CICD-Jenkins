@@ -5,6 +5,11 @@ pipeline {
         nodejs 'node'
     }
 
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'staging'], description: 'Environment')
+        string(name: 'VERSION', defaultValue: 'v1.0', description: 'App version')
+    }
+    
     stages {
         stage('Code Checkout'){
             steps {
